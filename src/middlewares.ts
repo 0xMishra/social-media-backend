@@ -4,8 +4,8 @@ import jwt from 'jsonwebtoken'
 import ErrorResponse from './interfaces/ErrorResponse'
 import { RequestValidators } from './interfaces/RequestValidators'
 import { ZodError } from 'zod'
-import { User, Users } from './api/user/user.model'
-import { ObjectId, WithId } from 'mongodb'
+import { Users } from './api/user/user.model'
+import { ObjectId } from 'mongodb'
 
 export function notFound(req: Request, res: Response, next: NextFunction) {
   res.status(404)
