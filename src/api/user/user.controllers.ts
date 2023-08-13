@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
-import { WithId } from 'mongodb'
 import { ZodError } from 'zod'
-import { SignupSchema, User, UserWithId, Users } from './user.model'
+import { SignupSchema, UserWithId, Users } from './user.model'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import { LoginSchema } from './user.model'
