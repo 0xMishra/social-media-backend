@@ -28,7 +28,7 @@ app.use(morgan('dev'))
 app.use(helmet())
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URI || 'localhost:5173'],
+    origin: [process.env.FRONTEND_URI || 'http://localhost:5173'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   }),
