@@ -64,6 +64,11 @@ export const login = async (
     let searchResult = await Users.findOne({ email: req.body?.email })
 
     if (searchResult) {
+      if (req.user) {
+        return res.status(200).json({
+          message: 'already logged in',
+        })
+      }
       const isMatch = await bcrypt.compare(
         req.body?.password,
         searchResult?.password,
