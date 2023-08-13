@@ -37,6 +37,7 @@ export const signup = async (
       '24d166cd6c8b826c779040b49d5b6708d649b236558e8744339dfee6afe11999',
     )
     res.cookie('token', token, {
+      httpOnly: true,
       maxAge: 60 * 60 * 1000,
       sameSite: 'none',
       secure: true,
@@ -74,6 +75,7 @@ export const login = async (
           '24d166cd6c8b826c779040b49d5b6708d649b236558e8744339dfee6afe11999',
         )
         res.cookie('token', token, {
+          httpOnly: true,
           maxAge: 60 * 60 * 1000,
           sameSite: 'none',
           secure: true,
@@ -113,6 +115,7 @@ export const logout = (
 ) => {
   try {
     res.cookie('token', null, {
+      httpOnly: true,
       expires: new Date(Date.now()),
       sameSite: 'none',
       secure: true,
