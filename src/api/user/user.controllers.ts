@@ -38,8 +38,8 @@ export const signup = async (
     )
     res.cookie('token', token, {
       maxAge: 60 * 60 * 1000,
-      sameSite: 'lax',
-      secure: false,
+      sameSite: 'none',
+      secure: true,
     })
     res.status(201)
     res.json({
@@ -75,8 +75,8 @@ export const login = async (
         )
         res.cookie('token', token, {
           maxAge: 60 * 60 * 1000,
-          sameSite: 'lax',
-          secure: false,
+          sameSite: 'none',
+          secure: true,
         })
         res.status(201)
         res.json({
@@ -114,8 +114,8 @@ export const logout = (
   try {
     res.cookie('token', null, {
       expires: new Date(Date.now()),
-      sameSite: 'lax',
-      secure: false,
+      sameSite: 'none',
+      secure: true,
     })
     res.status(200)
     res.json({
